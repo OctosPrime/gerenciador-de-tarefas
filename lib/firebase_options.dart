@@ -11,19 +11,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'SUA_API_KEY',
-    appId: 'SEU_APP_ID',
-    messagingSenderId: 'SEU_SENDER_ID',
-    projectId: 'SEU_PROJECT_ID',
-    databaseURL: 'https://SEU_PROJECT_ID-default-rtdb.firebaseio.com',
+    apiKey: 'AIzaSyABXMWBF8iIrgSP7klk0COppNqvV8jqTRk',
+    appId: '1:1091931343398:android:2df20c99114188ecc534e7',
+    messagingSenderId: '1091931343398',
+    projectId: 'gerenciador-de-tarefas-a1b50',
+    databaseURL: 'https://gerenciador-de-tarefas-a1b50-default-rtdb.firebaseio.com',
+    storageBucket: 'gerenciador-de-tarefas-a1b50.firebasestorage.app',
   );
-
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'SUA_API_KEY',
-    appId: 'SEU_APP_ID',
-    messagingSenderId: 'SEU_SENDER_ID',
-    projectId: 'SEU_PROJECT_ID',
-    authDomain: 'SEU_PROJECT_ID.firebaseapp.com',
-    databaseURL: 'https://SEU_PROJECT_ID-default-rtdb.firebaseio.com',
+    apiKey: 'AIzaSyAQVXox__3V-Z-F2Hx2N3x_QDSzNe0nBcc',
+    appId: '1:1091931343398:web:8ed7747051ae4d30c534e7',
+    messagingSenderId: '1091931343398',
+    projectId: 'gerenciador-de-tarefas-a1b50',
+    authDomain: 'gerenciador-de-tarefas-a1b50.firebaseapp.com',
+    databaseURL: 'https://gerenciador-de-tarefas-a1b50-default-rtdb.firebaseio.com',
+    storageBucket: 'gerenciador-de-tarefas-a1b50.firebasestorage.app',
+    measurementId: 'G-8F2TQ640Q2',
   );
 }

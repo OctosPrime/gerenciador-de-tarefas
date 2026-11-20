@@ -1,0 +1,30 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true
+    }
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "gerenciador-de-tarefas-a1b50",
+          "appId": "1:1091931343398:android:2df20c99114188ecc534e7",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "gerenciador-de-tarefas-a1b50",
+          "configurations": {
+            "android": "1:1091931343398:android:2df20c99114188ecc534e7",
+            "web": "1:1091931343398:web:8ed7747051ae4d30c534e7"
+          }
+        }
+      }
+    }
+  }
+}
