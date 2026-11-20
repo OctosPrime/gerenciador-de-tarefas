@@ -26,20 +26,31 @@ lib/
 └── themes/        app_theme.dart (lightTheme, darkTheme, ThemeController)
 ```
 
-## Como configurar o Firebase
+## Requisitos
 
-1. Crie um projeto em <https://console.firebase.google.com>.
-2. Em **Authentication → Método de login**, ative **E-mail/senha**.
-3. Em **Realtime Database**, crie o banco e cole as regras de `database.rules.json` na aba **Regras**.
-4. Instale as ferramentas e gere a configuração do app:
-   ```bash
-   npm install -g firebase-tools
-   dart pub global activate flutterfire_cli
-   firebase login
-   flutterfire configure
-   ```
-   Isso substitui `lib/firebase_options.dart` (e cria `android/app/google-services.json`).
-   Confira se o `firebase_options.dart` gerado contém `databaseURL`; se não tiver, adicione a URL do seu Realtime Database.
+- Flutter 3.50 ou mais novo (Gradle 9.5, Android Gradle Plugin 9.3, Java 17)
+- Android SDK com NDK 30 (`android/app/build.gradle.kts` → `ndkVersion`)
+
+## Firebase
+
+O repositório já vem configurado com o projeto `gerenciador-de-tarefas-a1b50`:
+
+- `lib/firebase_options.dart` e `android/app/google-services.json`, gerados pelo `flutterfire configure`;
+- `firebase.json`, que ativa o login por **e-mail/senha** e publica as regras de `database.rules.json` no Realtime Database.
+
+O pacote Android é `com.p2.gerenciadortarefas` (sem `_`, porque o Firebase recusa registrar nomes de pacote com underscore).
+
+Para usar **outro** projeto Firebase:
+
+```bash
+npm install -g firebase-tools
+dart pub global activate flutterfire_cli
+firebase login
+flutterfire configure            # escolha o projeto e as plataformas android/web
+firebase deploy --only auth,database --project SEU_PROJETO
+```
+
+Confira se o `firebase_options.dart` gerado contém `databaseURL`; se não tiver, adicione a URL do seu Realtime Database.
 
 ## Como executar
 
@@ -60,4 +71,14 @@ tarefas/
 
 ## Capturas de tela
 
-Adicione as imagens na pasta `screenshots/` (login, cadastro, home, drawer, lista, formulário, tema escuro).
+| Login | Cadastro de usuário | Tela inicial | Menu (Drawer) |
+|---|---|---|---|
+| ![](screenshots/01_login.png) | ![](screenshots/02_cadastro_usuario.png) | ![](screenshots/03_inicio.png) | ![](screenshots/04_menu_drawer.png) |
+
+| Nova tarefa | Lista (ListView) | Detalhes | Edição |
+|---|---|---|---|
+| ![](screenshots/05_nova_tarefa.png) | ![](screenshots/06_lista_tarefas.png) | ![](screenshots/07_detalhes_tarefa.png) | ![](screenshots/08_editar_tarefa.png) |
+
+| Exclusão | Tarefa concluída | Tema escuro | Início no tema escuro |
+|---|---|---|---|
+| ![](screenshots/09_excluir_tarefa.png) | ![](screenshots/10_tarefa_concluida.png) | ![](screenshots/11_tema_escuro.png) | ![](screenshots/12_inicio_tema_escuro.png) |
